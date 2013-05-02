@@ -1,0 +1,213 @@
+namespace MK.CleanCodeSaver.Core
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Windows.Forms;
+    using Microsoft.Win32;
+
+    /// <summary>
+    /// This is the screensaver.
+    /// </summary> 
+    partial class ScreenSaverForm : Form, IScreenSaverView
+    {
+        /// <summary>
+        /// The presenter of this form.
+        /// </summary>
+        private ScreenSaverPresenter presenter;
+
+        /// <summary>
+        /// The current mouse location.
+        /// </summary>
+        private Point mouseLocation;
+
+        /// <summary>
+        /// true if and only the screensaver was started in preview mode.
+        /// </summary>
+        private bool previewMode = false;
+
+        /// <summary>
+        /// A generator for random numbers.
+        /// </summary>
+        private Random rand = new Random();
+
+        /// <summary>
+        /// A generator for random numbers.
+        /// </summary>
+        private List<string> commandments = new List<string>();
+
+        /// <summary>
+        /// Index to the current commandment in the above List.
+        /// </summary>
+        private int currentCommandment;
+
+        /// <summary>
+        /// Default constructor the the ScreenSaverForm.
+        /// </summary>
+        public ScreenSaverForm()
+        {
+            this.InitializeComponent();
+            this.presenter = new ScreenSaverPresenter(this);
+        }
+
+        /// <summary>
+        /// Constructor the the ScreenSaverForm that is used for running the screensaver in full screen mode.
+        /// </summary>
+        /// <param name="bounds">Specifies the size of the form (full screen).</param>
+        public ScreenSaverForm(Rectangle bounds)
+            : this()
+        {
+            this.Bounds = bounds;
+        }
+
+        /// <summary>
+        /// Constructor the the ScreenSaverForm that is used for running the screensaver in preview mode.
+        /// </summary>
+        /// <param name="previewWindow">Parent window handle.</param>
+        public ScreenSaverForm(IntPtr previewWindow)
+            : this()
+        {
+            // Set the preview window as the parent of this window
+            NativeMethods.SetParent(this.Handle, previewWindow);
+
+            // Make this a child window so it will close when the parent dialog closes
+            NativeMethods.SetWindowLong(this.Handle, -16, new IntPtr(NativeMethods.GetWindowLong(this.Handle, -16) | 0x40000000));
+
+            // Place our window inside the parent
+            Rectangle parentRect;
+            NativeMethods.GetClientRect(previewWindow, out parentRect);
+            Size = parentRect.Size;
+            Location = new Point(0, 0);
+
+            this.previewMode = true;
+        }
+
+        /// <summary>
+        /// Starts the timer. 
+        /// </summary>
+        /// <param name="interval">Interval of timer in msec.</param>
+        public void StartTimer(int interval)
+        {
+            this.moveTimer.Interval = interval;
+            this.moveTimer.Tick += new EventHandler(this.OnMoveTimerTick);
+            this.moveTimer.Start();
+        }
+
+        /// <summary>
+        /// Sets the font to be used for displaying the rules.
+        /// </summary>
+        public void SetFont(Font font)
+        {
+            this.textLabel.Font = font;
+        }
+
+        /// <summary>
+        /// Updates the position, color and text of the currently shown text.
+        /// </summary>
+        public void UpdateText(Point position, Color color, string text)
+        {
+            this.textLabel.ForeColor = color;
+            this.textLabel.Left = position.X;
+            this.textLabel.Top = position.Y;
+            this.textLabel.Text = text;
+        }
+
+        /// <summary>
+        /// Loads the configuration.
+        /// </summary>
+        private void LoadSettings()
+        {
+            this.commandments.Add("Du sollst im laufenden Sprint keine ungeplanten Anforderungen umsetzen");
+            this.commandments.Add("Du sollst im Büro nicht unnötigen Lärm verursachen");
+            this.commandments.Add("Du sollst nicht an mehr als zwei Themen gleichzeitig arbeiten");
+            this.commandments.Add("Du sollst niemals kurz vor Feierabend oder kurz vor Urlaub committen");
+            this.commandments.Add("Du sollst den Jenkins grün halten");
+            this.commandments.Add("Du sollst kritische Fehler intern offensiv kommunizieren");
+
+            // Start with a random commandment...
+            this.currentCommandment = new Random().Next(Math.Max(0, this.commandments.Count - 1));
+        }
+
+        /// <summary>
+        /// Load the configuration and intitializes the screensaver.
+        /// </summary>
+        /// <param name="sender">Sender of this event.</param>
+        /// <param name="e">Arguments of thie event.</param>
+        private void OnLoad(object sender, EventArgs e)
+        {
+            Cursor.Hide(); 
+            
+            this.LoadSettings();
+
+            this.TopMost = true;
+
+            this.textLabel.Font = new System.Drawing.Font("Lucida Console", this.previewMode ? 6 : 22);
+            this.textLabel.ForeColor = Color.FromArgb(255, 255, 255, 255);
+            this.textLabel.Text = this.commandments[this.currentCommandment];
+
+            this.moveTimer.Interval = 4000;
+            this.moveTimer.Tick += new EventHandler(this.OnMoveTimerTick);
+            this.moveTimer.Start();
+        }
+
+        /// <summary>
+        /// Moves the text to a new location.
+        /// </summary>
+        /// <param name="sender">Sender of this event.</param>
+        /// <param name="e">Arguments of thie event.</param>
+        private void OnMoveTimerTick(object sender, System.EventArgs e)
+        {
+            if (++this.currentCommandment >= this.commandments.Count)
+                this.currentCommandment = 0;
+            
+            this.textLabel.Text = this.commandments[this.currentCommandment];
+            this.textLabel.Left = this.rand.Next(Math.Max(1, this.Bounds.Width - this.textLabel.Width));
+            this.textLabel.Top = this.rand.Next(Math.Max(1, this.Bounds.Height - this.textLabel.Height));
+        }
+
+        /// <summary>
+        /// Gets the current mouse position. If the position was changed by more than 5 pixels (horizontally
+        /// or vertically) the screensaver ends.
+        /// </summary>
+        /// <param name="sender">Sender of this event.</param>
+        /// <param name="e">Arguments of thie event.</param>
+        private void OnMouseMove(object sender, MouseEventArgs e)
+        {
+            if (!this.previewMode)
+            {
+                if (!this.mouseLocation.IsEmpty)
+                {
+                    // Terminate if mouse is moved a significant distance
+                    if (Math.Abs(this.mouseLocation.X - e.X) > 5 ||
+                        Math.Abs(this.mouseLocation.Y - e.Y) > 5)
+                        Application.Exit();
+                }
+
+                // Update current mouse location
+                this.mouseLocation = e.Location;
+            }
+        }
+
+        /// <summary>
+        /// Ends the screensaver.
+        /// </summary>
+        /// <param name="sender">Sender of this event.</param>
+        /// <param name="e">Arguments of thie event.</param>
+        private void OnKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!this.previewMode)
+                Application.Exit();
+        }
+
+        /// <summary>
+        /// Ends the screensaver.
+        /// </summary>
+        /// <param name="sender">Sender of this event.</param>
+        /// <param name="e">Arguments of thie event.</param>
+        private void OnMouseClick(object sender, MouseEventArgs e)
+        {
+            if (!this.previewMode)
+                Application.Exit();
+        }
+    }
+}
