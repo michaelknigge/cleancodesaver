@@ -49,6 +49,7 @@ namespace MK.CleanCodeSaver.Core
             : this()
         {
             this.Bounds = bounds;
+            this.textLabel.MaximumSize = new Size(bounds.Width, 0);
         }
 
         /// <summary>
