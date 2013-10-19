@@ -70,7 +70,7 @@ namespace MK.CleanCodeSaver.Core
         private static void ShowConfigurationDialog(long windowHandle)
         {
             // Later.....  --> Application.Run(new SettingsForm());
-            MessageBox.Show("The commandments are not negotiable (means: you can not configure CleanCodeSaver).", "CleanCodeSaver", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Configuration of CleanCodeSaver is not implemented yet...", "CleanCodeSaver", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -39,10 +39,12 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePresenter.cs" />
     <Compile Include="ScreenSaverModel.cs" />
+    <Compile Include="ScreenSaverModelFactory.cs" />
     <Compile Include="TextCollection.cs" />
     <Compile Include="IScreenSaverView.cs" />
     <Compile Include="NativeMethods.cs" />

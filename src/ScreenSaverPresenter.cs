@@ -31,7 +31,7 @@
         public ScreenSaverPresenter(IScreenSaverView view)
             : base(view)
         {
-            this.model = new ScreenSaverModel();
+            this.model = ScreenSaverModelFactory.Create();
         }
 
         /// <summary>
