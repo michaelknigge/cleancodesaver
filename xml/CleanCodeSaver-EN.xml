@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+
+  <textCollection color="red">
+    <entry caption="Don´t repeat yourself (DRY)" text="Any duplication of code or even intermediate steps triggers mistakes and inconsistencies."/>
+    <entry caption="Keep it simple, stupid (KISS)" text="If you do more than the simplest, you make the solution unnecessarily complicated and let your customers wait."/>
+    <entry caption="Beware of optimizations!" text="Optimizations are always expensive. Use caution before you decide to go that route - very often the time is better spent on things that are actually beneficial for the customer."/>
+    <entry caption="Favour composition over inheritance (FCoI)" text="Composition promotes loose coupling and testability of a system and is usually more flexible."/>
+    <entry caption="Follow the boy scouts rule" text="Raise the bar just a little bit whenever a piece of work is touched. Get there completely free of bureaucratic planning. A grass-roots approach to improved quality."/>
+    <entry caption="Root cause analysis" text="Treating symptoms only may bring fast relief - but in the long run it is more costsly. Always look beneath the surface of the problems, This will make you more efficient in the end."/>
+    <entry caption="Use a version control system" text="Fear of damage to a &quot;running system&quot; paralyzes the software development. With a version control such fear is unfounded. The development can progress quickly and boldly."/>
+    <entry caption="Apply Simple refactoring patterns" text="Code is easier to improve if we know typical improvement handles. Your application scenarios make sensitive to weak points in your code. As a recognized pattern, they strengthen the courage to use it."/>
+    <entry caption="Reflect daily" text="No improvement, no progress, no learning without reflection. But only if reflection is also planned, she finds under the pressure of daily business also held."/>
+  </textCollection>
+
+  <textCollection color="orange">
+    <entry caption="Single level of abstraction (SLA)" text="The maintenance of a abstraction level enhances readability."/>
+    <entry caption="Single responsibility principle (SRP)" text="Focus facilitates understanding. A class with exactly one responsibility is easier to understand than a grocery store."/>
+    <entry caption="Separation of concerns (SoC)" text="When a code unit has no clear purpose, it is hard to understand it, use it and to correct or enlarge it if necessary."/>
+    <entry caption="Source code conventions" text="Source Code is read more often than written. Therefore conventions are essential to make it easy to read and understand the code."/>
+    <entry caption="Issue tracking" text="You will not forget what you have written and you can effectively delegate and track the issues."/>
+    <entry caption="Automated integration tests" text="Integration testing ensures that the code does what it should. Not to automate this recurrent activity is a waste of time."/>
+    <entry caption="Read, read, read" text="Reading educates!"/>
+    <entry caption="Reviews" text="Four eyes see more than two. If a developer explains its code to others, usually details appear that have not been considered."/>
+  </textCollection>
+
+  <textCollection color="yellow">
+    <entry caption="Interface segregation principle (ISP)" text="Leistungsbeschreibungen, die unabhängig von einer konkreten Erfüllung sind, machen unabhängig."/>
+    <entry caption="Dependency inversion principle" text="Punktgenaues Testen setzt Isolation von Klassen voraus. Isolation entsteht, wenn Klassen keine Abhängigkeiten von Implementationen mehr enthalten – weder zur Laufzeit, noch zur Übersetzungszeit. Konkrete Abhängigkeiten sollten deshalb so spät wie möglich entschieden werden. Am besten zur Laufzeit."/>
+    <entry caption="Liskov substitution principle" text="Wer mit Erben zu tun hat, möchte keine Überraschungen erleben, wenn er mit Erblassern vertraut ist."/>
+    <entry caption="Principle of least astonishment" text="Wenn sich eine Komponente überraschenderweise anders verhält als erwartet, wird ihre Anwendung unnötig kompliziert und fehleranfällig."/>
+    <entry caption="Information hiding principle" text="Durch das Verbergen von Details in einer Schnittstelle werden die Abhängigkeiten reduziert."/>
+    <entry caption="Automated unit tests" text="Nur automatisierte Tests werden auch wirklich konsequent ausgeführt. Je punktgenauer sie Code testen, desto besser."/>
+    <entry caption="Mockups (test dummies)" text="Ohne Attrappen keine einfach kontrollierbaren Tests."/>
+    <entry caption="Code coverage analysis" text="Traue nur Tests, von denen du weißt, dass sie auch wirklich das Testareal abdecken."/>
+    <entry caption="Attend professional events" text="Am besten lernen wir von anderen und in Gemeinschaft."/>
+    <entry caption="Complex refactorings" text="Es ist nicht möglich, Code direkt in der ultimativen Form zu schreiben."/>
+  </textCollection>
+
+  <textCollection color="lightgreen">
+    <entry caption="Open closed principle" text="Weil das Risiko, durch neue Features ein bisher fehlerfreies System zu instabilisieren, so gering wie möglich gehalten werden sollte."/>
+    <entry caption="Tell, don´t ask" text="Hohe Kohäsion und lose Kopplung sind Tugenden. Öffentliche Zustandsdetails einer Klasse widersprechen dem."/>
+    <entry caption="Law of demeter" text="Abhängigkeiten von Objekten über mehrere Glieder einer Dienstleistungskette hinweg führen zu unschön enger Kopplung."/>
+    <entry caption="Continuous integration" text="Automatisierung und Zentralisierung der Softwareproduktion machen produktiver und reduzieren das Risiko von Fehlern bei der Auslieferung."/>
+    <entry caption="Static code analysis (metrics)" text="Vertrauen ist gut, Kontrolle ist besser - und je automatischer, desto leichter ist sie."/>
+    <entry caption="Inversion of control container" text="Nur, was nicht fest verdrahtet ist, kann leichter umkonfiguriert werden."/>
+    <entry caption="Share experience" text="Wer sein Wissen weitergibt, hilft nicht nur anderen, sondern auch sich selbst."/>
+    <entry caption="Measurement of errors" text="Nur wer weiß, wie viele Fehler auftreten, kann sein Vorgehen so verändern, dass die Fehlerrate sinkt."/>
+  </textCollection>
+
+  <textCollection color="lightblue">
+    <entry caption="Design and implementation don´t overlap" text="Planungsunterlagen, die mit der Umsetzung nichts mehr gemein haben, schaden mehr, als dass sie nützen. Deshalb nicht die Planung aufgeben, sondern die Chance auf Inkonsistenz minimieren."/>
+    <entry caption="Implementation reflects design" text="Umsetzung, die von der Planung beliebig abweichen kann, führt direkt in die Unwartbarkeit. Umsetzung braucht daher einen durch die Planung vorgegebenen physischen Rahmen."/>
+    <entry caption="You ain´t gonna need it (YAGNI)" text="Dinge die niemand braucht, haben keinen Wert. Verschwende an sie also keine Zeit."/>
+    <entry caption="Continuous delivery" text="Als Clean Code Developer möchte ich sicher sein, dass ein Setup das Produkt korrekt installiert. Wenn ich das erst beim Kunden herausfinde, ist es zu spät."/>
+    <entry caption="Iterative development" text="Warum? Frei nach von Clausewitz: Kein Entwurf, keine Implementation überlebt den Kontakt mit dem Kunden. Softwareentwicklung tut daher gut daran, ihren Kurs korrigieren zu können."/>
+    <entry caption="component orientation" text="Software braucht Black-Box-Bausteine, die sich parallel entwickeln und testen lassen. Das fördert Evolvierbarkeit, Produktivität und Korrektheit."/>
+    <entry caption="Test first" text="Der Kunde ist König und bestimmt die Form einer Dienstleistung. Service-Implementationen sind also nur passgenau, wenn sie durch einen Client getrieben werden."/>
+  </textCollection>
+
+</configuration>
