@@ -38,14 +38,14 @@
   </textCollection>
 
   <textCollection color="lightgreen">
-    <entry caption="Open closed principle" text="Weil das Risiko, durch neue Features ein bisher fehlerfreies System zu instabilisieren, so gering wie möglich gehalten werden sollte."/>
-    <entry caption="Tell, don´t ask" text="Hohe Kohäsion und lose Kopplung sind Tugenden. Öffentliche Zustandsdetails einer Klasse widersprechen dem."/>
-    <entry caption="Law of demeter" text="Abhängigkeiten von Objekten über mehrere Glieder einer Dienstleistungskette hinweg führen zu unschön enger Kopplung."/>
-    <entry caption="Continuous integration" text="Automatisierung und Zentralisierung der Softwareproduktion machen produktiver und reduzieren das Risiko von Fehlern bei der Auslieferung."/>
-    <entry caption="Static code analysis (metrics)" text="Vertrauen ist gut, Kontrolle ist besser - und je automatischer, desto leichter ist sie."/>
-    <entry caption="Inversion of control container" text="Nur, was nicht fest verdrahtet ist, kann leichter umkonfiguriert werden."/>
-    <entry caption="Share experience" text="Wer sein Wissen weitergibt, hilft nicht nur anderen, sondern auch sich selbst."/>
-    <entry caption="Measurement of errors" text="Nur wer weiß, wie viele Fehler auftreten, kann sein Vorgehen so verändern, dass die Fehlerrate sinkt."/>
+    <entry caption="Open closed principle" text="Because the risk to destabilize with new features a previously error-free system should be kept as low as possible."/>
+    <entry caption="Tell, don´t ask" text="High cohesion and loose coupling are virtues. Public details of a state within a class disagree."/>
+    <entry caption="Law of demeter" text="Dependencies of objects across multiple members of a service chain, lead to unsightly tight coupling."/>
+    <entry caption="Continuous integration" text="Automation and centralization of software production make it more productive and reduce the risk of errors during delivery."/>
+    <entry caption="Static code analysis (metrics)" text="Trust is good, control is better - and the more automatic, the easier it is."/>
+    <entry caption="Inversion of control container" text="Only what is not hard-wired, can be easily reconfigured."/>
+    <entry caption="Share experience" text="Who shares his knowledge, helps others as well as themselves"/>
+    <entry caption="Measurement of errors" text="Only he who knows how many errors occur, can change its approach so that the error rate decreases."/>
   </textCollection>
 
   <textCollection color="lightblue">
