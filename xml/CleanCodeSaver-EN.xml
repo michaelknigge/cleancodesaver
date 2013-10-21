@@ -49,13 +49,13 @@
   </textCollection>
 
   <textCollection color="lightblue">
-    <entry caption="Design and implementation don´t overlap" text="Planungsunterlagen, die mit der Umsetzung nichts mehr gemein haben, schaden mehr, als dass sie nützen. Deshalb nicht die Planung aufgeben, sondern die Chance auf Inkonsistenz minimieren."/>
-    <entry caption="Implementation reflects design" text="Umsetzung, die von der Planung beliebig abweichen kann, führt direkt in die Unwartbarkeit. Umsetzung braucht daher einen durch die Planung vorgegebenen physischen Rahmen."/>
-    <entry caption="You ain´t gonna need it (YAGNI)" text="Dinge die niemand braucht, haben keinen Wert. Verschwende an sie also keine Zeit."/>
-    <entry caption="Continuous delivery" text="Als Clean Code Developer möchte ich sicher sein, dass ein Setup das Produkt korrekt installiert. Wenn ich das erst beim Kunden herausfinde, ist es zu spät."/>
-    <entry caption="Iterative development" text="Warum? Frei nach von Clausewitz: Kein Entwurf, keine Implementation überlebt den Kontakt mit dem Kunden. Softwareentwicklung tut daher gut daran, ihren Kurs korrigieren zu können."/>
-    <entry caption="component orientation" text="Software braucht Black-Box-Bausteine, die sich parallel entwickeln und testen lassen. Das fördert Evolvierbarkeit, Produktivität und Korrektheit."/>
-    <entry caption="Test first" text="Der Kunde ist König und bestimmt die Form einer Dienstleistung. Service-Implementationen sind also nur passgenau, wenn sie durch einen Client getrieben werden."/>
+    <entry caption="Design and implementation don´t overlap" text="Planning documents that have nothing in common with the implementation, do more harm than profit. Therefore do not give up the planning, but minimize the chance of inconsistency."/>
+    <entry caption="Implementation reflects design" text="Reaction, which can vary arbitrarily from planning leads directly into unmaintainable implementation. Implementation therefore needs a set by the physical planning framework."/>
+    <entry caption="You ain´t gonna need it (YAGNI)" text="Things that nobody needs, have no value. It is no time to waste."/>
+    <entry caption="Continuous delivery" text="As a Clean Code Developer I want to be sure that the product is installed correctly by an installer. If I find out that only the customer, it is too late."/>
+    <entry caption="Iterative development" text="Why? Free to von Clausewitz No draft, no implementation survives contact with the customer. Software development therefore does well to be able to correct its course."/>
+    <entry caption="Component orientation" text="Software needs black-box modules, which can be developed and tested in parallel. This promotes evolvability, productivity and accuracy."/>
+    <entry caption="Test first" text="The customer is king and determines the form of a service. Service implementations are only so precisely when they are driven by a client."/>
   </textCollection>
 
 </configuration>
