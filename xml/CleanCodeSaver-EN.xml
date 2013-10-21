@@ -25,16 +25,16 @@
   </textCollection>
 
   <textCollection color="yellow">
-    <entry caption="Interface segregation principle (ISP)" text="Leistungsbeschreibungen, die unabhängig von einer konkreten Erfüllung sind, machen unabhängig."/>
-    <entry caption="Dependency inversion principle" text="Punktgenaues Testen setzt Isolation von Klassen voraus. Isolation entsteht, wenn Klassen keine Abhängigkeiten von Implementationen mehr enthalten – weder zur Laufzeit, noch zur Übersetzungszeit. Konkrete Abhängigkeiten sollten deshalb so spät wie möglich entschieden werden. Am besten zur Laufzeit."/>
-    <entry caption="Liskov substitution principle" text="Wer mit Erben zu tun hat, möchte keine Überraschungen erleben, wenn er mit Erblassern vertraut ist."/>
-    <entry caption="Principle of least astonishment" text="Wenn sich eine Komponente überraschenderweise anders verhält als erwartet, wird ihre Anwendung unnötig kompliziert und fehleranfällig."/>
-    <entry caption="Information hiding principle" text="Durch das Verbergen von Details in einer Schnittstelle werden die Abhängigkeiten reduziert."/>
-    <entry caption="Automated unit tests" text="Nur automatisierte Tests werden auch wirklich konsequent ausgeführt. Je punktgenauer sie Code testen, desto besser."/>
-    <entry caption="Mockups (test dummies)" text="Ohne Attrappen keine einfach kontrollierbaren Tests."/>
-    <entry caption="Code coverage analysis" text="Traue nur Tests, von denen du weißt, dass sie auch wirklich das Testareal abdecken."/>
-    <entry caption="Attend professional events" text="Am besten lernen wir von anderen und in Gemeinschaft."/>
-    <entry caption="Complex refactorings" text="Es ist nicht möglich, Code direkt in der ultimativen Form zu schreiben."/>
+    <entry caption="Interface segregation principle (ISP)" text="Service specifications, which are independent of a concrete fulfillment, result in independent code."/>
+    <entry caption="Dependency inversion principle" text="Precise testing requires isolation of classes. Isolation occurs when classes have no dependencies on implementations - neither at runtime, even at compile time. Specific dependencies should therefore be decided as late as possible. Best at runtime."/>
+    <entry caption="Liskov substitution principle" text="Who has to do with inheritor wants no surprises when he is familiar with the testator."/>
+    <entry caption="Principle of least astonishment" text="If a component surprisingly doesn't behave as expected, their application is unnecessarily complicated and error prone."/>
+    <entry caption="Information hiding principle" text="By hiding details in an interface, dependencies are reduced."/>
+    <entry caption="Automated unit tests" text="Only automated tests are performed really consistent. Precise tests are the best tests."/>
+    <entry caption="Mockups (test dummies)" text="Without dummies no easy controllable tests."/>
+    <entry caption="Code coverage analysis" text="Only trust tests, which you know that they really cover also the test area."/>
+    <entry caption="Attend professional events" text="The best way we learn from others and in community."/>
+    <entry caption="Complex refactorings" text="It is not possible to write code directly in the ultimate form."/>
   </textCollection>
 
   <textCollection color="lightgreen">
